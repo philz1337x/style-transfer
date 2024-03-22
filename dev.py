@@ -6,13 +6,16 @@ import torch
 from diffusers.utils import load_image
 import cv2
 
+
+image = load_image("link-to-your-image")
+
+ip_image = load_image("link-to-your-image-style")
+
 image_encoder = CLIPVisionModelWithProjection.from_pretrained(
     "h94/IP-Adapter", 
     subfolder="models/image_encoder",
     torch_dtype=torch.float16,
 ).to("cuda")
-
-image = load_image("https://replicate.delivery/pbxt/KbJQPaj3KBHz0kuaddny3Wf4ZhQpYyfDaJhecL7CebigvphB/input_1176.png")
 
 image_orig = image
 
@@ -59,13 +62,10 @@ pipe = StableDiffusionControlNetImg2ImgPipeline.from_single_file(
 
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 
-ip_image = load_image("https://firebasestorage.googleapis.com/v0/b/upscaler-89296.appspot.com/o/inputs%2Fmzy66feAaaQ5fdkZzdrobsXM9W63-5852ea59-49dd-4d57-b607-837cce976b93.jpg?alt=media&token=35363349-224d-4ffb-8dde-3f2be70f7152")
-
 pipe.load_ip_adapter("h94/IP-Adapter", subfolder="models", weight_name="ip-adapter_sd15.bin")
 pipe.set_ip_adapter_scale(0.4)
 
 pipe.enable_model_cpu_offload()
-
 
 generator = torch.manual_seed(1337)
 
