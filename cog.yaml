@@ -1,0 +1,17 @@
+build:
+  gpu: true
+  system_packages:
+    - "libgl1-mesa-glx"
+    - "libglib2.0-0"
+  python_version: "3.10.4"
+  python_packages:
+    - "torch==2.0.1"
+    - "torchvision==0.15.2"
+    - "diffusers==0.27.2"
+    - "transformers==4.27.1"
+    - "numpy==1.25.1"
+    - "opencv-python==4.9.0.80"
+    - "omegaconf==2.3.0"
+    - "accelerate==0.23.0"
+  run:
+predict: "predict.py:Predictor"
