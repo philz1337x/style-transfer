@@ -50,3 +50,12 @@ cog predict -i image="link-to-image" -i image_style="link-to-style-image"
 ## Run with A1111 webUI
 
 Use ControlNet Canny for the structure and IPAdapter for the style.
+
+## Run als a single script
+
+- change the image links in dev.py
+- run dev.py
+
+```bash
+python dev.py
+```
