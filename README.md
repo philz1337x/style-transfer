@@ -7,6 +7,8 @@
 [![Replicate](https://img.shields.io/badge/Demo-Replicate-purple)](https://replicate.com/philz1337x/style-transfer)
 ![GitHub stars](https://img.shields.io/github/stars/philz1337x/style-transfer?style=social&label=Star)
 
+My post on X/Twitter: https://x.com/philz1337x/status/1771559668910858246?s=20
+
 </div>
 
 # 👋 Hello
